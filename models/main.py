@@ -141,7 +141,7 @@ def main():
     server.close_model()
 
     metrics_df = pd.DataFrame(df_main, columns = ['round', 'model 1 train acc', 'model 1 train loss', 'model 2 train acc', 'model 2 train loss', 'model 1 test acc', 'model 1 test loss', 'model 2 test acc', 'model 2 test loss'])
-    metrics_df.to_csv("metrics/my_metrics.csv")
+    metrics_df.to_csv("content/blah2/models/metrics/my_metrics.csv")
 
     client_loss_history = {}
     for c in clients:
@@ -151,7 +151,7 @@ def main():
         client_loss_history[key] = c.loss_history_2
 
     client_loss_history_df = pd.DataFrame(client_loss_history)
-    client_loss_history_df.to_csv("metrics/client_loss_history.csv")
+    client_loss_history_df.to_csv("content/blah2/models/metrics/client_loss_history.csv")
 
 
 def online(clients):
@@ -177,14 +177,14 @@ def setup_clients(dataset_1, model_1, dataset_2, model_2, use_val_set=False):
         all_clients: list of Client objects.
     """
     eval_set = 'test' if not use_val_set else 'val'
-    train_data_dir = os.path.join('..', 'data', dataset_1, 'data', 'train')
-    test_data_dir = os.path.join('..', 'data', dataset_1, 'data', eval_set)
+    train_data_dir = os.path.join('content','blah2', 'data', dataset_1, 'data', 'train')
+    test_data_dir = os.path.join('content','blah2', 'data', dataset_1, 'data', eval_set)
 
     users_1, groups_1, train_data_1, test_data_1 = read_data(train_data_dir, test_data_dir)
 
     eval_set = 'test' if not use_val_set else 'val'
-    train_data_dir = os.path.join('..', 'data', dataset_2, 'data', 'train')
-    test_data_dir = os.path.join('..', 'data', dataset_2, 'data', eval_set)
+    train_data_dir = os.path.join('content','blah2', 'data', dataset_2, 'data', 'train')
+    test_data_dir = os.path.join('content','blah2', 'data', dataset_2, 'data', eval_set)
 
     users_2, groups_2, train_data_2, test_data_2 = read_data(train_data_dir, test_data_dir)
 
