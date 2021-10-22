@@ -54,7 +54,7 @@ MODEL_PARAMS = {
     'synthetic.log_reg': (0.0003, 5, 60), # lr, num_classes, input_dim
     'synthetic_1.log_reg': (0.0003, 5, 60), # lr, num_classes, input_dim
     'synthetic_2.log_reg': (0.0003, 10, 30), # lr, num_classes, input_dim
-    'reddit.stacked_lstm': (0.0003, 10, 256, 2), # lr, seq_len, num_hidden, num_layers
+    'reddit.stacked_lstm': (0.0003, 10, 32, 2), # lr, seq_len, num_hidden, num_layers
 }
 """dict: Model specific parameter specification"""
 
