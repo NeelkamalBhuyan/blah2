@@ -177,14 +177,14 @@ def setup_clients(dataset_1, model_1, dataset_2, model_2, use_val_set=False):
         all_clients: list of Client objects.
     """
     eval_set = 'test' if not use_val_set else 'val'
-    train_data_dir = os.path.join('content','blah2', 'data', dataset_1, 'data', 'train')
-    test_data_dir = os.path.join('content','blah2', 'data', dataset_1, 'data', eval_set)
+    train_data_dir = os.path.join('/content','blah2', 'data', dataset_1, 'data', 'train')
+    test_data_dir = os.path.join('/content','blah2', 'data', dataset_1, 'data', eval_set)
 
     users_1, groups_1, train_data_1, test_data_1 = read_data(train_data_dir, test_data_dir)
 
     eval_set = 'test' if not use_val_set else 'val'
-    train_data_dir = os.path.join('content','blah2', 'data', dataset_2, 'data', 'train')
-    test_data_dir = os.path.join('content','blah2', 'data', dataset_2, 'data', eval_set)
+    train_data_dir = os.path.join('/content','blah2', 'data', dataset_2, 'data', 'train')
+    test_data_dir = os.path.join('/content','blah2', 'data', dataset_2, 'data', eval_set)
 
     users_2, groups_2, train_data_2, test_data_2 = read_data(train_data_dir, test_data_dir)
 
