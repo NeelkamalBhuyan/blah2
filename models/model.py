@@ -71,7 +71,7 @@ class Model(ABC):
         """
         return None, None, None, None, None
 
-    def train(self, data, num_epochs=1, batch_size=10):
+    def train(self, data, num_epochs=1, batch_size=4):
         """
         Trains the client model.
 
